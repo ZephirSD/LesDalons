@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 :root {
     --width_full: 100%;
     --height_full: 100vh;
@@ -5,6 +7,7 @@
     --margin_main: 25px;
     --length_photo: 95px;
     --length_iconeGenre: 30px;
+    --montserrat: 'Montserrat', sans-serif;
 }
 
 
@@ -43,6 +46,11 @@ div#profile {
     position: relative;
 }
 
+div#profile div {
+    font-size: 13px;
+    font-family: var(--montserrat);
+}
+
 div.iconeGenre {
     position: absolute;
     width: var(--length_iconeGenre);
@@ -60,6 +68,10 @@ div.iconeGenre i {
 
 i#male {
     color: rgb(44, 44, 255);
+}
+
+i#female {
+    color: rgb(211, 45, 175);
 }
 
 div.photoProfile {
