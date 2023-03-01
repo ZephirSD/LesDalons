@@ -11,7 +11,6 @@ function fetchUsers(){
     .then((response)=>response.json())
     .then((data)=>{
         user = data.results;
-        console.log(user);
         caseUsers(user);
     });
 }
@@ -24,6 +23,7 @@ function caseUsers(u) {
         genre = elem.gender;
         image = elem.picture['large'];
         nameFirst = `${elem.name['first']} ${elem.name['last']}`;
+        dayConnection = dateCreation(elem.registered['date']);
         gridProfile.innerHTML += `
             <div id="profile">
                 <div class="iconeGenre">
@@ -35,12 +35,18 @@ function caseUsers(u) {
                 <div class="nomPrenom">${nameFirst}</div>
                 <div class="email">${email}</div>
                 <div class="inscription">
-                    Inscrit depuis 6530 jours
+                    Inscrit depuis ${dayConnection} jours
                 </div>
             </div>
         `
-        // console.log(image);
-        // console.log(email);
-        // console.log(nameFirst);
     });
 } 
+
+function dateCreation(dateCreate) {
+    const dateRegister = new Date(dateCreate);
+    const dateNow = new Date();
+    const betweDate = dateNow.getTime() - dateRegister.getTime();
+    const betweDay  = betweDate / (1000 * 3600 * 24);
+    const nombreJour = Math.round(betweDay);
+    return nombreJour;
+}
