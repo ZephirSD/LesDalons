@@ -1,3 +1,13 @@
+:root {
+    --width_full: 100%;
+    --height_full: 100vh;
+    --height_100: 100%;
+    --margin_main: 25px;
+    --length_photo: 95px;
+    --length_iconeGenre: 30px;
+}
+
+
 body {
     background-color: rgb(228, 228, 228);
     padding: 0;
@@ -5,6 +15,65 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100vh;
+    width: var(--width_full);
+    height: var(--height_full);
+}
+
+main {
+    width: calc(var(--width_full) - (var(--margin_main) * 2));
+    height: calc(var(--height_full) - (var(--margin_main) * 2));
+}
+
+section#gridProfile {
+    width: var(--width_full);
+    height: var(--height_100);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: 200px;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+div#profile {
+    background-color: rgb(221, 188, 3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+div.iconeGenre {
+    position: absolute;
+    width: var(--length_iconeGenre);
+    height: var(--length_iconeGenre);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10px;
+    left: 10px;
+}
+
+div.iconeGenre i {
+    font-size: 30px;
+}
+
+i#male {
+    color: rgb(44, 44, 255);
+}
+
+div.photoProfile {
+    width: var(--length_photo);
+    height: var(--length_photo);
+    background-color: gray;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+div.photoProfile img {
+    object-fit: cover;
+    object-position: center;
 }
