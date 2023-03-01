@@ -31,7 +31,7 @@ section#gridProfile {
     width: var(--width_full);
     height: var(--height_100);
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fill, 200px);
     grid-auto-rows: 200px;
     column-gap: 10px;
     row-gap: 10px;
